@@ -1,12 +1,11 @@
 import '../ItemList/ItemList.css';
 import Item from '../Item/Item';
 
-const ItemList = ( {products} ) => {
-    console.log(products)
+const ItemList = ( {productos} ) => {
+    console.log(productos)
     return <>
         <div className='ListGroup'>
-            console.log ()
-            {products.map(prod => <Item key={prod.id} {...prod}/>)}
+            {productos.map(prod => <Item key={prod.id} {...prod}/>)}
         </div>    
     </>
 };

@@ -1,22 +1,20 @@
-import Carrito from '../Carrito/Carrito.js';
 import '../NavBar/navBar.css';
-import 'bulma/css/bulma.css';
-import { NavLink, Link } from 'react-router-dom';
-
-
+import { Link } from 'react-router-dom';
+import LogoImg from "../../IMG/Logo.jpg.jpg";
+import CartWidget from '../CartWidget/CartWidget.js';
 
 const NavBar = () => {
     return <>
-        <nav className='NavBar hero is-link is-flex-direction-row is-justify-content-space-between'>
+        <nav className='NavBar'>
             <Link to="/">
-                <h3>ARK-9 LOGO!!!</h3>
+                <img className='Logo' src={LogoImg} alt="Logo" />
             </Link>
-            <div className='Categorias hero-menu is-flex is-justify-content-space-between'>
-                <NavLink to={`/categoria/remeras`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>REMERAS-</NavLink>
-                <NavLink to={`/categoria/pantalones`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>PANTALONES-</NavLink>
-                <NavLink to={`/categoria/abrigos`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>ABRIGOS</NavLink>
-            </div>
-            <Carrito></Carrito>
+            <ul className='menu'>
+                <li><Link className="menu-link" to="/categoria/remeras">REMERAS</Link></li>
+                <li><Link className="menu-link" to="/categoria/pantalones">PANTALONES</Link></li>
+                <li><Link className="menu-link" to="/categoria/remeras">ABRIGOS</Link></li>
+            </ul>
+            <CartWidget/>
         </nav>
 
     </>

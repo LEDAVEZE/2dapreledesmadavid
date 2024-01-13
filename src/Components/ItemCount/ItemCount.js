@@ -4,17 +4,17 @@ import "../ItemCount/ItemCount.css";
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [quantily, setQuantily] = useState(initial);
+    const [quantity, setQuantity] = useState(initial);
 
     const increment = () => {
-        if (quantily < stock) {
-            setQuantily (quantily + 1)
+        if (quantity < stock) {
+            setQuantity (quantity + 1)
         };
     };
 
     const decrement = () => {
-        if (quantily > 1) {
-            setQuantily (quantily - 1)
+        if (quantity > 1) {
+            setQuantity (quantity - 1)
         };
     };
 
@@ -22,17 +22,16 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <div className="Counter">
             <div className="Controls">
                 <button className="Button" onClick={decrement}>-</button>
-                <h4 className="Number">{quantily}</h4>
+                <h4 className="Number">{quantity}</h4>
                 <button className="Button" onClick={increment}>+</button>
             </div>
             <div>
-                <button className="button" onClick={() => onAdd (quantily)} disabled = {!stock}>
+                <button className="button agregar" onClick={() => onAdd (quantity)} disabled = {!stock}>
                     Agregar al carrito
                 </button>
             </div>
 
         </div>
-    
     </>
 };
 
